@@ -66,6 +66,16 @@ a { color: var(--accent); }
 
 .muted { opacity: 0.8; font-size: 14px; }
 
+.shot {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  margin: 8px auto 0;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
 .btnrow { text-align: center; margin-top: 32px; }
 
 .btn {
