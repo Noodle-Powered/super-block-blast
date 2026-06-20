@@ -3,26 +3,66 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Super Block Blast</title>
+  <title>Super Block Blast - Google Play</title>
   <meta name="description" content="Super Block Blast - a colorful block puzzle game by Noodle Powered." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="hero">
-    <h1>Super Block Blast</h1>
-    <p class="tagline">A colorful block puzzle game by Noodle Powered</p>
+    <div class="hero-inner">
+      <img class="app-icon" src="icon.png" alt="Super Block Blast icon" />
+      <div class="app-meta">
+        <h1>Super Block Blast</h1>
+        <div class="dev">Noodle Powered</div>
+        <div class="sub">Puzzle &middot; In-app purchases</div>
+        <a class="install" href="#" aria-disabled="true">Coming soon</a>
+      </div>
+    </div>
   </header>
 
-  <main class="wrap">
-    <img class="shot" src="sbb-game.png" alt="Super Block Blast gameplay screenshot" />
+  <main class="content">
+    <section>
+      <div class="shots">
+        <img src="sbb-game.png" alt="Super Block Blast gameplay" />
+      </div>
+    </section>
 
-    <div class="btnrow">
-      <a class="btn" href="privacy.html">Privacy Policy</a>
-    </div>
+    <section class="about">
+      <h2>About this game</h2>
+      <p>Super Block Blast is a relaxing yet addictive block puzzle. Drag colorful
+      blocks onto the 8&times;8 grid, complete full rows and columns to clear them,
+      and chain combos for high scores.</p>
+      <p>Dig out of tight spots with power-ups - Clear Board, Single Block and Reset
+      Pieces - and pick the pace that suits you with Relax, Normal and Hard modes.
+      Beat your best score and keep the board alive!</p>
+    </section>
+
+    <section>
+      <h2>Features</h2>
+      <div class="chips">
+        <span class="chip">Classic 8&times;8 block puzzle</span>
+        <span class="chip">Combos &amp; line clears</span>
+        <span class="chip">Power-ups</span>
+        <span class="chip">3 difficulty modes</span>
+        <span class="chip">Daily rewards</span>
+        <span class="chip">Plays offline</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>App info</h2>
+      <div class="info-row"><span class="k">Developer</span><span>Noodle Powered</span></div>
+      <div class="info-row"><span class="k">Category</span><span>Puzzle</span></div>
+      <div class="info-row"><span class="k">In-app purchases</span><span>Yes</span></div>
+      <div class="info-row"><span class="k">Privacy policy</span><span><a href="privacy.html">View policy</a></span></div>
+    </section>
   </main>
 
   <footer>
-    &copy; 2026 Noodle Powered
+    &copy; 2026 Noodle Powered &middot; <a href="privacy.html">Privacy Policy</a>
   </footer>
 </body>
 </html>

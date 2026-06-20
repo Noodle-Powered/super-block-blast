@@ -1,97 +1,141 @@
 :root {
-  --grad-top: #096e42;
-  --grad-bottom: #007c96;
+  /* Game dark-mode background gradient (from Main.tscn) */
+  --game-top: #6a3853;
+  --game-mid: #07586c;
+  --game-bottom: #612795;
+  /* Google Play palette */
+  --play-green: #01875f;
+  --ink: #202124;
+  --ink-soft: #5f6368;
+  --line: #e8eaed;
   --accent: #ffea55;
-  --ink: #ffffff;
-  --panel: rgba(0, 0, 0, 0.22);
 }
 
 * { box-sizing: border-box; }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  min-height: 100%;
-}
+html, body { margin: 0; padding: 0; }
 
 body {
-  font-family: "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+  font-family: Roboto, "Segoe UI", system-ui, Arial, sans-serif;
   color: var(--ink);
-  background: linear-gradient(180deg, var(--grad-top), var(--grad-bottom));
-  background-attachment: fixed;
-  line-height: 1.6;
+  background: #ffffff;
+  line-height: 1.5;
 }
 
-.wrap {
-  max-width: 760px;
+a { color: var(--play-green); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---------- HERO (game background) ---------- */
+
+.hero {
+  background: linear-gradient(160deg, var(--game-top) 0%, var(--game-mid) 57%, var(--game-bottom) 100%);
+  color: #ffffff;
+  padding: 40px 24px 48px;
+}
+
+.hero-inner {
+  max-width: 920px;
   margin: 0 auto;
-  padding: 48px 24px 80px;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-header.hero {
-  text-align: center;
-  padding: 64px 24px 32px;
+.app-icon {
+  width: 120px;
+  height: 120px;
+  border-radius: 26px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  flex: 0 0 auto;
 }
 
-h1 {
-  font-size: clamp(36px, 8vw, 64px);
-  margin: 0 0 8px;
-  letter-spacing: 1px;
-  text-shadow: 0 4px 0 rgba(0, 0, 0, 0.35);
+.app-meta { min-width: 240px; }
+
+.app-meta h1 {
+  font-size: clamp(28px, 6vw, 44px);
+  margin: 0 0 6px;
+  font-weight: 700;
 }
 
-.tagline {
-  font-size: clamp(16px, 3.5vw, 22px);
+.dev {
   color: var(--accent);
-  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
 }
 
-.card {
-  background: var(--panel);
-  border-radius: 20px;
-  padding: 28px 28px 32px;
-  margin-top: 28px;
-  backdrop-filter: blur(2px);
+.sub {
+  margin-top: 6px;
+  font-size: 13px;
+  opacity: 0.85;
 }
 
-h2 {
-  color: var(--accent);
-  margin-top: 28px;
-  font-size: 22px;
-}
-
-h2:first-child { margin-top: 0; }
-
-a { color: var(--accent); }
-
-.muted { opacity: 0.8; font-size: 14px; }
-
-.shot {
-  display: block;
-  width: 100%;
-  max-width: 420px;
-  height: auto;
-  margin: 8px auto 0;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-}
-
-.btnrow { text-align: center; margin-top: 32px; }
-
-.btn {
+.install {
   display: inline-block;
-  background: var(--accent);
-  color: #0a3a2a;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 14px 28px;
-  border-radius: 14px;
-  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.3);
+  margin-top: 18px;
+  background: var(--play-green);
+  color: #fff;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 12px 40px;
+  border-radius: 8px;
+  cursor: pointer;
 }
+.install:hover { text-decoration: none; filter: brightness(1.07); }
+.install[aria-disabled="true"] { opacity: 0.65; cursor: default; }
+
+/* ---------- WHITE CONTENT ---------- */
+
+.content {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 8px 24px 48px;
+}
+
+section { padding: 28px 0; border-bottom: 1px solid var(--line); }
+section:last-of-type { border-bottom: none; }
+
+h2 { font-size: 20px; margin: 0 0 16px; font-weight: 600; }
+
+/* Screenshot strip */
+.shots {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  -webkit-overflow-scrolling: touch;
+}
+.shots img {
+  height: 360px;
+  width: auto;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  flex: 0 0 auto;
+}
+
+.about p { color: var(--ink); margin: 0 0 14px; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.chip {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  font-size: 14px;
+}
+.info-row .k { color: var(--ink-soft); }
 
 footer {
   text-align: center;
-  padding: 32px 16px;
-  opacity: 0.75;
+  padding: 28px 16px;
+  color: var(--ink-soft);
   font-size: 13px;
 }
